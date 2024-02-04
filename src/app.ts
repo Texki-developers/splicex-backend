@@ -3,7 +3,7 @@ import logger from 'morgan';
 const fileUpload = require('express-fileupload');
 import cors from 'cors';
 import { connectDatabase } from './config/databaseConnection';
-import { adminRoutes, authRoutes, jobRoutes, paymentRoutes, contactRoutes, blogRoutes, paymentV2Routes, maidsV2Routes } from './routes';
+import { authRoutes, contactRoutes, blogRoutes } from './routes';
 import multer from 'multer';
 import { subscriptionCron } from './utils/CronJob/Cronjob';
 
@@ -35,8 +35,6 @@ app.get('/', (req: Request, res: Response) => {
 
 // Server routes
 app.use('/api/v1/auth', authRoutes);
-app.use('/api/v1/admin', adminRoutes);
-app.use('/api/v1/job', jobRoutes);
 app.use('/api/v1/contact', contactRoutes);
 app.use('/api/v1/blog', blogRoutes)
 
