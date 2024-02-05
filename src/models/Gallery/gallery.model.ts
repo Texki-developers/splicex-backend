@@ -1,21 +1,17 @@
 import mongoose from "mongoose";
 
 const ContactSchema = new mongoose.Schema({
-  name: {
+  image: {
     type: String,
     required: true,
   },
-  email: {
+  type:{
     type: String,
     required: true,
   },
-  mobile: {
-    type: String,
-    required: true,
-  },
-  message: {
+  alt: {
     type: String,
   }
 }, { timestamps: true })
 
-export const ContactModel = mongoose.model('Contact', ContactSchema)
+export const GalleryModel = mongoose.model('Gallery', ContactSchema)

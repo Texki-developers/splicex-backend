@@ -2,6 +2,7 @@
 export type ICustomerRegisterBody = {
   user_id?: string;
   first_name: string;
+  name?:string;
   last_name: string;
   email: string;
   password: string;
@@ -23,6 +24,11 @@ export type ICustomerForgetPassBody = {
 export type ICustomerResetPassBody = {
   password: string;
   confirm_password: string;
+}
+
+export type IGalleryBody = {
+  image:string;
+  alt:string
 }
 
 // Declare the type of adminRegisterBody 
