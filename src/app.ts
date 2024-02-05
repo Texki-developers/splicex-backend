@@ -10,7 +10,7 @@ import { subscriptionCron } from './utils/CronJob/Cronjob';
 const app: Application = express();
 
 // configure environment variables
-require('dotenv').config();
+require('dotenv').config({ path: `.env.${process.env.NODE_ENV}` });
 
 // Middleware
 app.use(logger('dev'));
@@ -30,7 +30,7 @@ subscriptionCron();
 app.use(cors()); //cors Configuration for development
 
 app.get('/', (req: Request, res: Response) => {
-  res.send('Pickmymaid');
+  res.send(process.env.PROJECT_NAME)
 });
 
 // Server routes
