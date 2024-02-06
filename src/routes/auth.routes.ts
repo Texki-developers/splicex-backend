@@ -8,8 +8,8 @@ import {  createCustomerController, customerLoginController,  } from '../control
 const router: Router = express.Router();
 
 // Customer routes
-router.post('/customer/register', validator(CustomerRegisterSchema), createCustomerController);
-router.post('/customer/login', validator(CustomerLoginSchema), customerLoginController);
+router.post('/admin/register', validator(CustomerRegisterSchema), createCustomerController);
+router.post('/admin/login', validator(CustomerLoginSchema), customerLoginController);
 
 
 

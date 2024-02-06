@@ -3,7 +3,7 @@ import logger from 'morgan';
 const fileUpload = require('express-fileupload');
 import cors from 'cors';
 import { connectDatabase } from './config/databaseConnection';
-import { authRoutes, contactRoutes, blogRoutes, galleryRoutes } from './routes';
+import { authRoutes, contactRoutes, galleryRoutes } from './routes';
 import multer from 'multer';
 import { subscriptionCron } from './utils/CronJob/Cronjob';
 

@@ -3,11 +3,10 @@ import regularExpressions from '../../utils/constants/regularExpressions';
 import responseMessages from '../../utils/constants/responseMessages';
 
 export const CustomerRegisterSchema = yup.object({
-  first_name: yup.string().min(3, responseMessages.min('First Name', 3)).required(responseMessages.required('First Name')),
-  last_name: yup.string().min(2, responseMessages.min('Last Name', 2)),
+  name: yup.string().min(3, responseMessages.min('name', 3)).required(responseMessages.required('First Name')),
   email: yup.string().matches(regularExpressions.isEmail, responseMessages.validity('Email address')).required(responseMessages.required('Email')),
   password: yup.string().min(6, responseMessages.min('Password', 6)).max(16, responseMessages.max('Password', 16)).required(responseMessages.required('Password')),
-  confirm_password: yup.string().required('Confirm Password is required')
+
 })
 
 export const CustomerLoginSchema = yup.object({
