@@ -36,7 +36,7 @@ export const   getImageController = (req: Request, res: Response) => {
       responseHandler(
         res,
         "OK",
-        { images: data.data.data },
+        {  ...data.data },
         { message: data.message }
       );
     })

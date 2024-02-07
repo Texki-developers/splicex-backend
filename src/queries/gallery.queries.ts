@@ -16,12 +16,12 @@ export const getPaginatedImage = async (
   const query = type ? { type } : {};
   const totalCount = await GalleryModel.countDocuments(query);
 
-  const data = await GalleryModel.find(query)
+  const images = await GalleryModel.find(query)
     .skip((page - 1) * limit)
     .limit(limit);
 
     return{
-      data,totalCount
+      images,totalCount
     }
 };
 
