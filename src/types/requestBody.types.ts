@@ -1,12 +1,11 @@
 // Declare the type of body of customer registration form
 export type ICustomerRegisterBody = {
-  user_id?: string;
-  first_name: string;
+
   name?:string;
-  last_name: string;
+
   email: string;
   password: string;
-  confirm_password?: string
+
 }
 
 // Declare the type of body of customer login form
