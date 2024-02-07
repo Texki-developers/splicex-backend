@@ -5,7 +5,6 @@ import { createUserID } from "../utils/createUserID/createUserID";
 
 export const createCustomer = async (body: ICustomerRegisterBody) => {
   const newUser = new AdminModel({
-    user_id: createUserID(body.first_name),
     ...body
   });
   return await newUser.save();
