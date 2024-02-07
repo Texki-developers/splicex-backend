@@ -10,6 +10,6 @@ import { validateJwtToken } from "../middleware/jwtValidator";
 const router: Router = express.Router();
 
 router.post("/", validateJwtToken, saveImageController);
-router.get("/", validateJwtToken, getImageController);
+router.get("/",  getImageController);
 router.delete("/", validateJwtToken, deleteImageController);
 export default router;

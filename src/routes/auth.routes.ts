@@ -11,8 +11,4 @@ const router: Router = express.Router();
 router.post('/admin/register', validator(CustomerRegisterSchema), createUserController);
 router.post('/admin/login', validator(CustomerLoginSchema), userLoginController);
 
-
-
-
-
 export default router;

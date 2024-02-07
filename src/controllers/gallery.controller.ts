@@ -28,7 +28,7 @@ export const saveImageController = (req: Request, res: Response) => {
     });
 };
 
-export const getImageController = (req: Request, res: Response) => {
+export const   getImageController = (req: Request, res: Response) => {
   const page: number = parseInt(req.query.page as string) || 1;
   const type: string | undefined = req.query.type as string | undefined;
   getImageService(page, type)
@@ -36,7 +36,7 @@ export const getImageController = (req: Request, res: Response) => {
       responseHandler(
         res,
         "OK",
-        { images: data.data },
+        { images: data.data.data },
         { message: data.message }
       );
     })
