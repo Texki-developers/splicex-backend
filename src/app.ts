@@ -4,8 +4,7 @@ const fileUpload = require('express-fileupload');
 import cors from 'cors';
 import { connectDatabase } from './config/databaseConnection';
 import { authRoutes, contactRoutes, galleryRoutes } from './routes';
-import multer from 'multer';
-import { subscriptionCron } from './utils/CronJob/Cronjob';
+
 
 const app: Application = express();
 
@@ -25,7 +24,6 @@ app.use('*/images', express.static('./public/uploads'));
 // Connect to database
 connectDatabase();
 
-subscriptionCron();
 // Setup the cors
 app.use(cors()); //cors Configuration for development
 
