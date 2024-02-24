@@ -3,9 +3,8 @@ import logger from 'morgan';
 const fileUpload = require('express-fileupload');
 import cors from 'cors';
 import { connectDatabase } from './config/databaseConnection';
-import { authRoutes, contactRoutes, blogRoutes, galleryRoutes } from './routes';
-import multer from 'multer';
-import { subscriptionCron } from './utils/CronJob/Cronjob';
+import { authRoutes, contactRoutes, galleryRoutes } from './routes';
+
 
 const app: Application = express();
 
@@ -25,7 +24,6 @@ app.use('*/images', express.static('./public/uploads'));
 // Connect to database
 connectDatabase();
 
-subscriptionCron();
 // Setup the cors
 app.use(cors()); //cors Configuration for development
 
