@@ -58,13 +58,13 @@ export const userLoginService = (credential: ICustomerLoginBody) => {
       const jwtSecret = process.env.JWT_SECRET || "";
 
       if (user && user?.password) {
-        const { user_id } = user;
+        const { _id } = user;
         const isValidPassword = await passwordValidator(
           password,
           user?.password
         );
         if (isValidPassword) {
-          const token = await jwt.sign({ user_id: user_id }, jwtSecret, {
+          const token = await jwt.sign({ user_id: _id }, jwtSecret, {
             expiresIn: "48h",
           });
           return resolve({
